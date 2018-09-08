@@ -62,6 +62,170 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-带女朋友学GoLang第四章" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/08/带女朋友学GoLang第四章/" class="article-date">
+  <time datetime="2018-09-07T16:33:43.343Z" itemprop="datePublished">2018-09-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="带女朋友学GoLang第四章"><a href="#带女朋友学GoLang第四章" class="headerlink" title="带女朋友学GoLang第四章"></a>带女朋友学GoLang第四章</h2><h4 id="示例函数"><a href="#示例函数" class="headerlink" title="示例函数"></a>示例函数</h4><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">calculateBill</span><span class="params">(price <span class="keyword">int</span>, no <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;  </span><br><span class="line">    <span class="keyword">var</span> totalPrice = price * no <span class="comment">// 商品总价 = 商品单价 * 数量</span></span><br><span class="line">    <span class="keyword">return</span> totalPrice <span class="comment">// 返回总价</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 如果有连续若干个参数，它们的类型一致，那么我们无须一一罗列，只需在最后一个参数后添加该类型</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">calculateBill</span><span class="params">(price, no <span class="keyword">int</span>)</span> <span class="title">int</span></span> &#123;  </span><br><span class="line">    <span class="keyword">var</span> totalPrice = price * no</span><br><span class="line">    <span class="keyword">return</span> totalPrice</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="多值返回-有几个返回值-就有几个类型限制"><a href="#多值返回-有几个返回值-就有几个类型限制" class="headerlink" title="多值返回 有几个返回值 就有几个类型限制"></a>多值返回 有几个返回值 就有几个类型限制</h4><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> (  </span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">rectProps</span><span class="params">(length, width <span class="keyword">float64</span>)</span><span class="params">(<span class="keyword">float64</span>, <span class="keyword">float64</span>)</span></span> &#123;  </span><br><span class="line">    <span class="keyword">var</span> area = length * width</span><br><span class="line">    <span class="keyword">var</span> perimeter = (length + width) * <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> area, perimeter</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;  </span><br><span class="line">    area, perimeter := rectProps(<span class="number">10.8</span>, <span class="number">5.6</span>)</span><br><span class="line">    fmt.Printf(<span class="string">"Area %f Perimeter %f"</span>, area, perimeter) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="命名返回值"><a href="#命名返回值" class="headerlink" title="命名返回值"></a>命名返回值</h4><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">rectProps</span><span class="params">(length, width <span class="keyword">float64</span>)</span><span class="params">(area, perimeter <span class="keyword">float64</span>)</span></span> &#123;  </span><br><span class="line">    area = length * width</span><br><span class="line">    perimeter = (length + width) * <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> <span class="comment">// 不需要明确指定返回值，默认返回 area, perimeter 的值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="空白符"><a href="#空白符" class="headerlink" title="空白符 _"></a>空白符 _</h4><p>_ 在 Go 中被用作空白符，可以用作表示任何类型的任何值。</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (  </span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">rectProps</span><span class="params">(length, width <span class="keyword">float64</span>)</span> <span class="params">(<span class="keyword">float64</span>, <span class="keyword">float64</span>)</span></span> &#123;  </span><br><span class="line">    <span class="keyword">var</span> area = length * width</span><br><span class="line">    <span class="keyword">var</span> perimeter = (length + width) * <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> area, perimeter</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;  </span><br><span class="line">    area, _ := rectProps(<span class="number">10.8</span>, <span class="number">5.6</span>) <span class="comment">// 返回值周长被丢弃</span></span><br><span class="line">    fmt.Printf(<span class="string">"Area %f "</span>, area)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// cannot use _ as value</span></span><br><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">getsum</span><span class="params">(a, b <span class="keyword">int</span>)</span> <span class="params">(<span class="keyword">int</span>, <span class="keyword">int</span>)</span></span> &#123;</span><br><span class="line">	<span class="keyword">return</span> a, b</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">blank</span><span class="params">()</span></span> &#123;</span><br><span class="line">	fmt.Println(<span class="string">"1111"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;</span><br><span class="line">	a, _ := getsum(<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line">	blank()</span><br><span class="line">	fmt.Println(_, a)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="无return"><a href="#无return" class="headerlink" title="无return"></a>无return</h4><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">blank</span><span class="params">()</span></span>  &#123;</span><br><span class="line">	fmt.Println(<span class="string">"1111"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/08/带女朋友学GoLang第四章/" data-id="cjlsty9db00036gi7cd7uigdx" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-带女朋友学GoLang第三章" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/08/带女朋友学GoLang第三章/" class="article-date">
+  <time datetime="2018-09-07T16:24:23.979Z" itemprop="datePublished">2018-09-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="带女朋友学GoLang第三章"><a href="#带女朋友学GoLang第三章" class="headerlink" title="带女朋友学GoLang第三章"></a>带女朋友学GoLang第三章</h2><h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><p>关键字 const 被用于表示常量，比如 50 和 I love Go。即使在上面的代码中我们没有明确的使用关键字 const，但是在 Go 的内部，它们是常量。</p>
+<p>顾名思义，常量不能再重新赋值为其他的值。因此下面的程序将不能正常工作，它将出现一个编译错误: <code>cannot assign to a.</code></p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;  </span><br><span class="line">    <span class="keyword">const</span> a = <span class="number">55</span> <span class="comment">// 允许</span></span><br><span class="line">    a = <span class="number">89</span>       <span class="comment">// 不允许重新赋值</span></span><br><span class="line">    <span class="keyword">const</span> b <span class="keyword">int</span> = <span class="number">10</span> <span class="comment">// 允许</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>常量的值会在编译的时候确定。因为函数调用发生在运行时，所以不能将函数的返回值赋值给常量。</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> (  </span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">    <span class="string">"math"</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;  </span><br><span class="line">    fmt.Println(<span class="string">"Hello, playground"</span>)</span><br><span class="line">    <span class="keyword">var</span> a = math.Sqrt(<span class="number">4</span>)   <span class="comment">// 允许</span></span><br><span class="line">    <span class="keyword">const</span> b = math.Sqrt(<span class="number">4</span>) <span class="comment">// 不允许</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">var</span> defaultName = <span class="string">"Sam"</span> <span class="comment">// 允许</span></span><br><span class="line">        <span class="keyword">type</span> myString <span class="keyword">string</span></span><br><span class="line">        <span class="keyword">var</span> customName myString = <span class="string">"Sam"</span> <span class="comment">// 允许</span></span><br><span class="line">        customName = defaultName <span class="comment">// 不允许</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/08/带女朋友学GoLang第三章/" data-id="cjlsty9d300006gi71ekctvq5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-带女朋友学GoLang第二章" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/07/带女朋友学GoLang第二章/" class="article-date">
+  <time datetime="2018-09-07T15:53:00.731Z" itemprop="datePublished">2018-09-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="带女朋友学GoLang第二章"><a href="#带女朋友学GoLang第二章" class="headerlink" title="带女朋友学GoLang第二章"></a>带女朋友学GoLang第二章</h2><h4 id="golang基本类型"><a href="#golang基本类型" class="headerlink" title="golang基本类型"></a>golang基本类型</h4><ul>
+<li>bool</li>
+<li>数字类型<ul>
+<li>int8, int16, int32, int64, int</li>
+<li>uint8, uint16, uint32, uint64, uint</li>
+<li>float32, float64</li>
+<li>complex64, complex128</li>
+<li>byte</li>
+<li>rune</li>
+</ul>
+</li>
+<li>string</li>
+</ul>
+<h4 id="bool"><a href="#bool" class="headerlink" title="bool"></a>bool</h4><p>bool 类型表示一个布尔值，值为 true 或者 false。</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span> <span class="params">()</span></span> &#123;</span><br><span class="line">	a := <span class="literal">true</span></span><br><span class="line">    b := <span class="literal">false</span></span><br><span class="line">    fmt.Println(<span class="string">"a:"</span>, a, <span class="string">"b:"</span>, b)</span><br><span class="line">    c := a &amp;&amp; b <span class="comment">// 仅当 a 和 b 都为 true 时，操作符 &amp;&amp; 才返回 true</span></span><br><span class="line">    fmt.Println(<span class="string">"c:"</span>, c)</span><br><span class="line">    d := a || b <span class="comment">// 有一个true 操作符 || 就返回 true</span></span><br><span class="line">    fmt.Println(<span class="string">"d:"</span>, d)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数字类型-有符号类型"><a href="#数字类型-有符号类型" class="headerlink" title="数字类型 有符号类型"></a>数字类型 有符号类型</h4><p>int8：表示 8 位有符号整型<br>大小：8 位<br>范围：-128～127</p>
+<p>int16：表示 16 位有符号整型<br>大小：16 位<br>范围：-32768～32767</p>
+<p>int32：表示 32 位有符号整型<br>大小：32 位<br>范围：-2147483648～2147483647</p>
+<p>int64：表示 64 位有符号整型<br>大小：64 位<br>范围：-9223372036854775808～9223372036854775807</p>
+<p>int：根据不同的底层平台（Underlying Platform），表示 32 或 64 位整型。除非对整型的大小有特定的需求，否则你通常应该使用 int 表示整型。<br>大小：在 32 位系统下是 32 位，而在 64 位系统下是 64 位。<br>范围：在 32 位系统下是 -2147483648～2147483647，而在 64 位系统是 -9223372036854775808～9223372036854775807。</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> (  </span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">    <span class="string">"unsafe"</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;  </span><br><span class="line">    <span class="keyword">var</span> a <span class="keyword">int</span> = <span class="number">89</span></span><br><span class="line">    b := <span class="number">95</span></span><br><span class="line">    fmt.Println(<span class="string">"value of a is"</span>, a, <span class="string">"and b is"</span>, b)</span><br><span class="line">    fmt.Printf(<span class="string">"type of a is %T, size of a is %d"</span>, a, unsafe.Sizeof(a)) <span class="comment">// a 的类型和大小</span></span><br><span class="line">    fmt.Printf(<span class="string">"\ntype of b is %T, size of b is %d"</span>, b, unsafe.Sizeof(b)) <span class="comment">// b 的类型和大小</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数字类型-无符号类型"><a href="#数字类型-无符号类型" class="headerlink" title="数字类型 无符号类型"></a>数字类型 无符号类型</h4><p>uint8：表示 8 位无符号整型<br>大小：8 位<br>范围：0～255</p>
+<p>uint16：表示 16 位无符号整型<br>大小：16 位<br>范围：0～65535</p>
+<p>uint32：表示 32 位无符号整型<br>大小：32 位<br>范围：0～4294967295</p>
+<p>uint64：表示 64 位无符号整型<br>大小：64 位<br>范围：0～18446744073709551615</p>
+<p>uint：根据不同的底层平台，表示 32 或 64 位无符号整型。<br>大小：在 32 位系统下是 32 位，而在 64 位系统下是 64 位。<br>范围：在 32 位系统下是 0～4294967295，而在 64 位系统是 0～18446744073709551615</p>
+<h4 id="数字类型-浮点型"><a href="#数字类型-浮点型" class="headerlink" title="数字类型  浮点型"></a>数字类型  浮点型</h4><p>float32：32 位浮点数</p>
+<p>float64：64 位浮点数</p>
+<h4 id="数字类型-复数类型"><a href="#数字类型-复数类型" class="headerlink" title="数字类型 复数类型"></a>数字类型 复数类型</h4><p>complex64：实部和虚部都是 float32 类型的的复数。</p>
+<p>complex128：实部和虚部都是 float64 类型的的复数。</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> (  </span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;  </span><br><span class="line">    c1 := <span class="built_in">complex</span>(<span class="number">5</span>, <span class="number">7</span>) <span class="comment">// FloatType 两个参数都是float类型</span></span><br><span class="line">    c2 := <span class="number">8</span> + <span class="number">27i</span></span><br><span class="line">    cadd := c1 + c2</span><br><span class="line">    fmt.Println(<span class="string">"sum:"</span>, cadd)</span><br><span class="line">    cmul := c1 * c2</span><br><span class="line">    fmt.Println(<span class="string">"product:"</span>, cmul)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="数字类型-其他数字类型"><a href="#数字类型-其他数字类型" class="headerlink" title="数字类型 其他数字类型"></a>数字类型 其他数字类型</h4><p>byte 是 uint8 的别名。</p>
+<p>rune 是 int32 的别名。</p>
+<h4 id="字符串类型-string"><a href="#字符串类型-string" class="headerlink" title="字符串类型 string"></a>字符串类型 string</h4><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> (  </span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;  </span><br><span class="line">    first := <span class="string">"Naveen"</span></span><br><span class="line">    last := <span class="string">"Ramanathan"</span></span><br><span class="line">    name := first +<span class="string">" "</span>+ last <span class="comment">// 字符串拼接</span></span><br><span class="line">    fmt.Println(<span class="string">"My name is"</span>,name) </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><p>Go 有着非常严格的强类型特征。Go 没有自动类型提升或类型转换<br><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> (  </span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;  </span><br><span class="line">    i := <span class="number">55</span>      <span class="comment">//int</span></span><br><span class="line">    j := <span class="number">67.8</span>    <span class="comment">//float64</span></span><br><span class="line">    sum := i + <span class="keyword">int</span>(j) <span class="comment">//j is converted to int</span></span><br><span class="line">    fmt.Println(sum)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/07/带女朋友学GoLang第二章/" data-id="cjlsty9da00026gi7ibiq9ydi" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-带女朋友学GoLang第一期" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/07/带女朋友学GoLang第一期/" class="article-date">
+  <time datetime="2018-09-07T15:18:59.575Z" itemprop="datePublished">2018-09-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="带女朋友学GoLang第一章"><a href="#带女朋友学GoLang第一章" class="headerlink" title="带女朋友学GoLang第一章"></a>带女朋友学GoLang第一章</h2><h4 id="环境搭建-自行手把手教学"><a href="#环境搭建-自行手把手教学" class="headerlink" title="环境搭建(自行手把手教学)"></a>环境搭建(自行手把手教学)</h4><h4 id="生命变量的几种方式"><a href="#生命变量的几种方式" class="headerlink" title="生命变量的几种方式"></a>生命变量的几种方式</h4><ul>
+<li>第一种 变量声明</li>
+</ul>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span> <span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> age <span class="keyword">int</span> <span class="comment">//变量声明,这里没有赋值，如果变量未被赋值，Go 会自动地将其初始化</span></span><br><span class="line">	fmt.Println(<span class="string">"my age is"</span>, age)</span><br><span class="line">	age = <span class="number">10</span> <span class="comment">// 赋值,必须是int类型</span></span><br><span class="line">	fmt.Println(<span class="string">"my age is"</span>, age)</span><br><span class="line">	<span class="comment">// 变量声明并初始化</span></span><br><span class="line">	<span class="keyword">var</span> name <span class="keyword">string</span> = <span class="string">"zzy"</span> <span class="comment">// golang字符串必须是双引号</span></span><br><span class="line">	fmt.Println(<span class="string">"my name is"</span>, name)</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二种 类型推断</li>
+</ul>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span> <span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> age = <span class="number">10</span> <span class="comment">// 没有指定类型，Go 能够根据初始值自动推断变量的类型</span></span><br><span class="line">	fmt.Println(<span class="string">"my age is"</span>, age)</span><br><span class="line">	<span class="keyword">var</span> name <span class="comment">// 会报错 类型推断必须被赋值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第三种 声明多个变量</li>
+</ul>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span> <span class="params">()</span></span> &#123;</span><br><span class="line">	<span class="keyword">var</span> age, name = <span class="number">10</span>, <span class="string">"zzy"</span> <span class="comment">// 声明多个变量并初始化</span></span><br><span class="line">	fmt.Println(<span class="string">"my age is"</span>, age, my name is<span class="string">", name)</span></span><br><span class="line"><span class="string">	var age1, name1 int // 声明两个变量都是int，并系统自动初始化</span></span><br><span class="line"><span class="string">	age1 = 10 // 赋值</span></span><br><span class="line"><span class="string">	name1 = 20</span></span><br><span class="line"><span class="string">	fmt.Println("</span>my age is<span class="string">", age, my name is"</span>, name)</span><br><span class="line">	<span class="keyword">var</span> age2 <span class="keyword">int</span>, name2 <span class="keyword">string</span> <span class="comment">// 报错， 声明多个变量必须是 var xx,xx,xx int 只有一个类型且所有变量都是这个类型</span></span><br><span class="line">	<span class="comment">// 所以要声明多个变量且不同类型呢？</span></span><br><span class="line">	<span class="keyword">var</span> (</span><br><span class="line">		age3 = <span class="number">10</span> <span class="comment">// 类型推断</span></span><br><span class="line">		name3 <span class="keyword">string</span> = <span class="string">"123"</span> <span class="comment">// 声明并初始化</span></span><br><span class="line">		class1 <span class="keyword">string</span> <span class="comment">// 声明系统初始化</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第四种 简短声明 与 var 关键字水火不容</li>
+</ul>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span> <span class="params">()</span></span> &#123;</span><br><span class="line">	age, name := <span class="number">10</span>, <span class="string">"zzy"</span> <span class="comment">// 简短声明</span></span><br><span class="line">	age = <span class="string">"111"</span> <span class="comment">// 报错  类型必须一样</span></span><br><span class="line">	<span class="keyword">var</span> mm := <span class="number">1</span> <span class="comment">// 报错</span></span><br><span class="line">	age1, name1 := <span class="number">10</span> <span class="comment">//报错，必须几个变量就要赋几个值</span></span><br><span class="line">	<span class="comment">// 简短声明的语法要求 := 操作符的左边至少有一个变量是尚未声明的</span></span><br><span class="line">	aa, bb := <span class="number">1</span>, <span class="number">2</span></span><br><span class="line">	aa, cc := <span class="number">1</span>, <span class="number">2</span> <span class="comment">// 正常运行 有一个cc变量为声明</span></span><br><span class="line">	aa, bb := <span class="number">2</span>, <span class="number">3</span> <span class="comment">// 报错 因为没有所有变量都已经声明</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/07/带女朋友学GoLang第一期/" data-id="cjlsty9d800016gi7fn58txab" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-拉萨出行路线图" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2018/09/01/拉萨出行路线图/" class="article-date">
@@ -333,7 +497,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2018/09/01/拉萨出行路线图/" data-id="cjljedqog0000r1i7vfsu524s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2018/09/01/拉萨出行路线图/" data-id="cjlsty9dc00046gi72ha0m0r5" class="article-share-link">Share</a>
       
       
     </footer>
@@ -372,6 +536,22 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2018/09/08/带女朋友学GoLang第四章/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/08/带女朋友学GoLang第三章/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/07/带女朋友学GoLang第二章/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/07/带女朋友学GoLang第一期/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2018/09/01/拉萨出行路线图/">(no title)</a>
