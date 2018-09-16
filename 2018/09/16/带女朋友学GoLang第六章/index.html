@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>旅行计划</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="带女朋友学GoLang第六章if-else让我们编写一个简单的程序来检测一个数字是奇数还是偶数。  声明if-else第一种方法  123456789101112131415package mainimport (      &quot;fmt&quot;)func main() &amp;#123;      num := 10    if num % 2 == 0 &amp;#123; //checks if number is">
+<meta property="og:type" content="article">
+<meta property="og:title" content="旅行计划">
+<meta property="og:url" content="http://yoursite.com/2018/09/16/带女朋友学GoLang第六章/index.html">
+<meta property="og:site_name" content="旅行计划">
+<meta property="og:description" content="带女朋友学GoLang第六章if-else让我们编写一个简单的程序来检测一个数字是奇数还是偶数。  声明if-else第一种方法  123456789101112131415package mainimport (      &quot;fmt&quot;)func main() &amp;#123;      num := 10    if num % 2 == 0 &amp;#123; //checks if number is">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-16T07:39:05.988Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="旅行计划">
+<meta name="twitter:description" content="带女朋友学GoLang第六章if-else让我们编写一个简单的程序来检测一个数字是奇数还是偶数。  声明if-else第一种方法  123456789101112131415package mainimport (      &quot;fmt&quot;)func main() &amp;#123;      num := 10    if num % 2 == 0 &amp;#123; //checks if number is">
+  
+    <link rel="alternate" href="/atom.xml" title="旅行计划" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">旅行计划</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-带女朋友学GoLang第六章" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2018/09/16/带女朋友学GoLang第六章/" class="article-date">
+  <time datetime="2018-09-16T07:39:05.988Z" itemprop="datePublished">2018-09-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="带女朋友学GoLang第六章"><a href="#带女朋友学GoLang第六章" class="headerlink" title="带女朋友学GoLang第六章"></a>带女朋友学GoLang第六章</h2><h4 id="if-else"><a href="#if-else" class="headerlink" title="if-else"></a>if-else</h4><p>让我们编写一个简单的程序来检测一个数字是奇数还是偶数。</p>
+<ul>
+<li>声明<code>if-else</code>第一种方法</li>
+</ul>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (  </span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;  </span><br><span class="line">    num := <span class="number">10</span></span><br><span class="line">    <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span> &#123; <span class="comment">//checks if number is even</span></span><br><span class="line">        fmt.Println(<span class="string">"the number is even"</span>) </span><br><span class="line">    &#125;  <span class="keyword">else</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">"the number is odd"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    fmt.Println(num) <span class="comment">// 10</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>声明<code>if-else</code>第二种方法</li>
+</ul>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (  </span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;  </span><br><span class="line">    <span class="keyword">if</span> num := <span class="number">10</span>; num % <span class="number">2</span> == <span class="number">0</span> &#123; <span class="comment">//checks if number is even</span></span><br><span class="line">        fmt.Println(num,<span class="string">"is even"</span>) </span><br><span class="line">    &#125;  <span class="keyword">else</span> &#123;</span><br><span class="line">        fmt.Println(num,<span class="string">"is odd"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// error</span></span><br><span class="line">    fmt.Println(num) <span class="comment">// 在上面的程序中，num 在 if 语句中进行初始化，num 只能从 if 和 else 中访问。也就是说 num 的范围仅限于 if else 代码块。如果我们试图从其他外部的 if 或者 else 访问 num,编译器会不通过。</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="注意代码规范"><a href="#注意代码规范" class="headerlink" title="注意代码规范"></a>注意代码规范</h4><figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> main</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> (  </span><br><span class="line">    <span class="string">"fmt"</span></span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span> &#123;  </span><br><span class="line">    num := <span class="number">10</span></span><br><span class="line">    <span class="keyword">if</span> num % <span class="number">2</span> == <span class="number">0</span> &#123; <span class="comment">//checks if number is even</span></span><br><span class="line">        fmt.Println(<span class="string">"the number is even"</span>) </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        fmt.Println(<span class="string">"the number is odd"</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译之后</p>
+<p>↓↓↓↓↓↓</p>
+<figure class="highlight golang"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> num%<span class="number">2</span> == <span class="number">0</span> &#123;  </span><br><span class="line">      fmt.Println(<span class="string">"the number is even"</span>) </span><br><span class="line">&#125;;  <span class="comment">//semicolon inserted by Go</span></span><br><span class="line"><span class="keyword">else</span> &#123;  </span><br><span class="line">      fmt.Println(<span class="string">"the number is odd"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2018/09/16/带女朋友学GoLang第六章/" data-id="cjm4jv3ly0001hbjfcoix21hb" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2018/09/16/带女朋友学GoLang第五章/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/09/08/带女朋友学GoLang第四章/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title"></div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">September 2018</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">August 2018</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2018/09/16/带女朋友学GoLang第五章/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/16/带女朋友学GoLang第六章/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/08/带女朋友学GoLang第四章/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/08/带女朋友学GoLang第三章/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2018/09/07/带女朋友学GoLang第二章/">(no title)</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2018 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
